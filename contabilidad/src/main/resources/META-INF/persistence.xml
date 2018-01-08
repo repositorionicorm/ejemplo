@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="com.cajapaita.contabilidad_contabilidad_war_1.0-SNAPSHOTPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>pe.cajapaita.backerp.contabilidad.entidad.Moneda</class>
+    <class>pe.cajapaita.backerp.contabilidad.entidad.Asiento</class>
+    <class>pe.cajapaita.backerp.contabilidad.entidad.Periodo</class>
+    <class>pe.cajapaita.backerp.contabilidad.entidad.Cuenta</class>
+    <class>pe.cajapaita.backerp.contabilidad.entidad.TipoAsiento</class>
+    <class>pe.cajapaita.backerp.contabilidad.entidad.Detalle</class>
+    <class>pe.cajapaita.backerp.contabilidad.entidad.Saldo</class>
+    <class>pe.cajapaita.backerp.contabilidad.entidad.Procedencia</class>
+    <class>pe.cajapaita.backerp.contabilidad.entidad.Estado</class>
+    <class>pe.cajapaita.backerp.contabilidad.entidad.Clase</class>
+    <class>pe.cajapaita.backerp.contabilidad.entidad.TipoCuenta</class>
+    <class>pe.cajapaita.backerp.contabilidad.entidad.Modulo</class>
+    <class>pe.cajapaita.backerp.contabilidad.entidad.Usuario</class>
+    <class>pe.cajapaita.backerp.contabilidad.entidad.Parametro</class>
+    <class>pe.cajapaita.backerp.contabilidad.entidad.Integracion</class>
+    <class>pe.cajapaita.backerp.contabilidad.entidad.Agencia</class>
+    <class>pe.cajapaita.backerp.contabilidad.entidad.Clave</class>
+    <class>pe.cajapaita.backerp.contabilidad.entidad.GrupoEncaje</class>
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@10.0.201.13:1589:SYSONEDEV"/>
+      <property name="javax.persistence.jdbc.password" value="oracle"/>
+      <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
+      <property name="javax.persistence.jdbc.user" value="ERP"/>
+    </properties>
+  </persistence-unit>
+</persistence>

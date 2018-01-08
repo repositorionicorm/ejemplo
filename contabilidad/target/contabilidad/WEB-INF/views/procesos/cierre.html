@@ -1,0 +1,35 @@
+<div th:fragment="modalCierre">
+    <div id="modalCierre" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header modal-header-default">
+                    <button id="cerrarProcesandoCierre" type="button" class="close " data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">
+                        Procesar Cierre 
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <h4 class="text-primary text-center" id="colorTituloPeriodo"><span id="encabezadoPeriodo">Periodo</span> <span id="periodoAct"></span></h4>
+                    <div id="estados">
+                       
+                    </div>
+                    
+                    <div id="errorCierre " ></div>
+                    
+                    <h4 id="cierreProcesando"  class="text-center text-primary hide">
+                        <span class=" glyphicon glyphicon-hourglass"></span> &nbsp;<span id="cargandoCierre"> Procesando Cierre...</span>
+                    </h4>
+                    <div id="mensajeCierre" class="text-center">
+                        
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <p class="text-center">
+                        <button id="btnCierre" class="btn btn-primary">Procesar Cierre</button>
+                        <button id="btnCancelar" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

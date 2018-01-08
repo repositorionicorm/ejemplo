@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3" layout:decorator="layout">
+    <head>
+        <title>Asientos</title>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+         <link href="/contabilidad/recursos/css/bootstrapPersonalizado.css" rel="stylesheet"/>
+    </head>
+    <body>
+        <div layout:fragment="contenido">
+            <div id="principal " >
+                <div class="col-md-12 contenedor-pantilla">
+                    <div class=" contenedor-titulo col-md-12">
+                        <div id="contenedorMensajes"></div>
+                        <h4 class=" titulo-pagina">
+                            Asientos contables
+                            <div th:if="${editar=='N'}"  class="text-right" style="float: right">
+                                <button title="Agregar Asientos" id="btnAgregarAsiento" class=" btn-primary boton-agregar btn btn-sm">
+                                    <span class="glyphicon glyphicon-plus"></span>
+                                </button>
+                            </div>
+                        </h4>
+                    </div>
+                    <div class="col-md-12 contenedor-cuerpo">
+                        <div class="panel panel-default padding-panel">
+                            <div class="panel-body ">
+                                <div class="row">
+                                    <div class="form-group col-md-2-1-per">
+                                        <label>Periodo:  </label>
+                                        <select id="cmbPeriodo" class="form-control input-sm">
+                                        </select>
+                                    </div> 
+                                    <div class="form-group col-md-2-2-per">
+                                        <label>Agencia:  </label>
+                                        <select id="cmbAgencia" class="form-control input-sm">
+                                            <option value="0">TODOS</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-3">
+                                        <label>Tipo:  </label>
+                                        <select id="cmbTipoAsiento" class="form-control input-sm">
+                                            <option value="0">TODOS</option>
+                                        </select>
+                                    </div>                                              
+                                    <div class="form-group col-md-2 col-padding-7">
+                                        <label>Moneda:  </label>
+                                        <select id="cmbMonedaAsiento" class="form-control input-sm">
+                                            <option value="0">TODOS</option>
+                                        </select>
+                                    </div>                                              
+                                    <div class="form-group col-md-2">
+                                        <label>Procedencia:  </label>
+                                        <select id="cmbProcedenciaAsiento" class="form-control input-sm">
+                                            <option value="0">TODOS</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-2-1-per">
+                                        <label>Asiento:</label>
+                                        <input id="numero" placeholder="Número" type="text" class="form-control input-sm"/>
+                                    </div>                       
+                                    <div class="form-group col-md-1">
+                                        <label></label>
+                                        <button title="Buscar" type="button" id="btnFiltrarListaAsientos" class="  input-sm  boton-gris  form-control btn " > 
+                                            <span class="glyphicon glyphicon-search"></span>
+                                        </button>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div id="contenedorTabla" class="table-responsive" >
+                                <table  class="table table-condensed"  id="tablaListaAsientos">   
+                                </table>
+                                <div id="paginacion"> </div>
+                            </div>
+                            <div class="mensaje text-left">
+                            </div>
+                        </div>
+                    </div>
+                    <div th:replace="asientos/modales :: modalDetalleAsiento">                       
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div layout:fragment="myScript">
+            <script src="/contabilidad/recursos/js/validaciones.js"></script>
+            <script src="/contabilidad/recursos/js/asientos/asientos.js"></script>
+            <script src="/contabilidad/recursos/js/asientos/listar.js"></script>
+        </div>
+    </body>
+</html>

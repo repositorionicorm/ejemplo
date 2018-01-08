@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html layout:decorator="layout">
+    <head>
+        <title>Actualización Tipo Cambio</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    </head>
+    <body>
+        <div layout:fragment="contenido">
+            <div id="principal">
+                <div class="col-md-12 contenedor-pantilla">
+                    <div class=" contenedor-titulo col-md-12">
+                        <div id="contenedorMensajes"></div>
+                        <h4 class=" titulo-pagina">
+                            Actualizar Tipo Cambio               
+                        </h4>
+                    </div>
+                    <div class="col-md-12 contenedor-cuerpo">
+                       
+                        <div class="panel panel-default ">
+                            <div class="panel-body ">
+
+                                <div class="row">
+                                    <form class="form-inline" id="formularioTipoCambio" >
+
+                                        <div class="form-group col-md-3">
+                                            <label for="tipoCambio">Periodo Actual:</label>
+                                            <strong><span class="text-primary" th:text="${periodo}"></span></strong>
+                                        </div>
+                                        <div class="form-group col-md-3">
+                                            <label for="tipoCambio">Tipo Cambio Actual:</label>
+                                            <strong><span class="text-primary" th:text="${tipoCambio}" id="tipoCambio"></span></strong>
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label for="nuevoTipoCambio">Nuevo Tipo Cambio:</label>
+                                            <input autofocus="" id="nuevoTipoCambio"  maxlength="5" name="nuevoTipoCambio" class="input-sm form-control text-right"  type="text"  />
+                                        </div>
+                                        <div class="col-md-1">
+                                            <button id="btnModificarTC" type="submit" class="btn btn-primary">Procesar</button>
+                                        </div>
+                                        <div class="col-md-1">
+                                            <button title="Ver Historico" id="btnHistorico" class="btn btn-default" >
+                                                <span class="glyphicon glyphicon-book"></span>
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="row text-center">
+                            <div id="mensajeTC"></div>
+                        </div>
+
+                        <div id="contenedorTablaTC" class="col-md-12">
+                            <table id="tblTablaTC" class="table table-responsive">
+                            </table>
+                        </div>
+                        <div id="contenedorGrabado"  class="hide">
+                            <div class="text-right col-md-12 ">
+                                <button id="btnIntegrarTC" type="button" class="btn btn-primary">Integrar</button>
+                                <button class="btn btn-default" onclick="location.href = '/contabilidad/proceso/datosTCambio'">Cancelar</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+             <div th:replace="procesos/modal :: modalHistoricoTC"></div>
+        </div>
+       
+        <div layout:fragment="myScript">            
+            <script src="/contabilidad/recursos/js/procesos/tipoCambio.js"></script>            
+        </div>
+    </body>
+</html>

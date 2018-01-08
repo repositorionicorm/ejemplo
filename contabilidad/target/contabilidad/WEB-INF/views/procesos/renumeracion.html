@@ -1,0 +1,34 @@
+<div th:fragment="modalRenumeracion">
+    <div id="modalRenumeraracion" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header modal-header-default">
+                    <button id="cerrarProcesandoRenumeracion" type="button" class="close " data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">
+                        Procesar Renumeración 
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <p >
+                        <h4 class="text-center text-primary" id="fechaRenumeracion"></h4>
+                    </p>
+                    
+                    <div id="errorNumeracion"></div>
+                    
+                    <h4 id="renumeracionProcesando"  class="text-center text-primary hide">
+                        <span class="glyphicon glyphicon-hourglass"></span> &nbsp;<span id="textProcesando">Procesando Renumeración...</span>
+                    </h4>
+                    <div id="mensajeRenumeracion" class="alert hide" role="alert">
+                        
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <p class="text-center">
+                        <button id="btnRenumerar" class="btn btn-primary">Renumerar</button>
+                        <button id="btnCerrarRenumerar" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

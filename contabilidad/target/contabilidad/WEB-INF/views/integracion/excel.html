@@ -1,0 +1,70 @@
+            <form id="formGrabarAsiento">
+                <div class="col-md-12 contenedor-pantilla">
+                    <div class=" contenedor-titulo col-md-12">
+                        <h4 class=" titulo-pagina">
+                            <span >Crear Asiento</span> 
+                            <span  style="float: right">N° <span id="spanNumAsientoEditar"> - -</span></span>
+                        </h4>
+                    </div>
+                    <div class="hidden" id="idAsiento"  th:attr="data-id=${idAsiento}"></div>
+                    <div class="col-md-12 contenedor-cuerpo">
+                        <div class="col-lg-12" >
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-body" id="panelValidaciones">
+                                <div class="">
+                                    <div class="col-md-12 form-inline">                  
+                                        <div class="form-group inline-margin" id="contenedorFecha">
+                                            <label> Fecha: </label>
+                                            <div class=" input-group  input-append date " id="datePicker-excel">
+                                                <input id="txtFecAsiento" type="text" class=" form-control input-sm" name="txtFecAsiento" />
+                                                <span  class="addon-fecha input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="form-group inline-margin" id="contenedorMoneda">
+                                            <label>Moneda:  </label>
+                                            <select id="cmbTipoMoneda" class="form-control input-sm">
+                                                <option id="0" value="0">SELECCIONE</option>
+                                                <option th:each="moneda : ${monedas}"  th:value="${moneda.id}"  th:text="${moneda.descripcion}"></option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group" id="anchoTipoAsiento">
+                                            <label>Tipo:</label>
+                                            <select id="cmbTipoGrabar"  class="form-control input-sm" >                    
+                                                <option id="0"  value="0">SELECCIONE</option>
+                                                <option th:attr="data-glosa=${asiento.glosa}" th:each="asiento : ${tipoAsientos}" th:value="${asiento.id}" th:text="${asiento.descripcion}"></option>
+                                            </select>
+                                        </div>                    
+                                    </div>
+                                    
+                                    <div id="glosaGrabar" class="col-md-12 form-inline">
+                                        <div class="form-group" style="width: 100%">
+                                                 <label>Glosa:</label>
+                                                 <input name="txtGlosa" id="txtGlosa" class="text-uppercase form-control input-sm"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <input type="file"  id="fileArchivoExcel" name="fileArchivoExcel"/>
+                        
+                        
+                        
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-right">
+                            <button type="button"  class="btn btn-sm btn-primary" id="btnSubirArchivoExcel" title="Seleccionar Archivo"> <span class="glyphicon glyphicon-open"></span> </button>     
+                        </div>
+                        <div id="contenedorTabla" class="table-responsive col-xs-12" >
+                            <table  id="tblDetalleAsiento" class="table table-hover  table-responsive table-bordered table-condensed padding-corto-table">
+                            </table>
+                        </div>
+                        <div  id="mensajeAsiento"></div>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-right   padding-buttom" >
+                            <br/>
+                            <button type="button" class="btn btn-primary btn-sm " id="btnGrabarAsiento">Grabar</button>
+                            <button class="btn btn-default btn-sm" id="btnCancelarAsiento">Cancelar</button>
+                        </div>
+                    </div>
+                </div>
+            </form>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html layout:decorator="layout">
+    <head>
+        <title> </title><!--NO BORRAR EL ESPACIO-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <div layout:fragment="contenido">
+            <div id="principal">
+                <div class="col-md-12 contenedor-pantilla">
+                    <div class=" contenedor-titulo col-md-12">
+                        <div class="hidden" id="dias" ></div>
+                        <div id="contenedorMensajes"></div>
+                        <h4 class=" titulo-pagina">
+                            <div layout:fragment="titulo"></div>
+                        </h4>
+                    </div>
+                    <div class="col-md-12 contenedor-cuerpo">
+                        <div class="panel panel-default padding-panel">
+                            <div class="panel-body ">
+                                <div layout:fragment="cabeceraReporte">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div layout:fragment="cuerpoReporte">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div layout:fragment="myScript">
+            <script src="/contabilidad/recursos/js/reportes/reportes.js"></script>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,54 @@
+<div id="principal" class="container-fluid">
+    <div class="col-md-12 contenedor-pantilla">
+        <div class=" contenedor-titulo col-md-12">
+            <h4 class=" titulo-pagina">
+                <div>Configuracion reportes</div>
+            </h4>
+        </div>
+        <div class="col-md-12 contenedor-cuerpo">
+            <div class="panel panel-default padding-panel">
+                <div class="panel-body ">
+
+                    <form id="formReporteEncaje">
+                        <div class="form-inline">
+
+                            <div class="form-group">
+                                <label>Reporte:  </label>
+                                <select id="cmbReporteTipo" class=" form-control input-sm">
+                                    <option th:if="${reportes !=null}"  th:each="reporte : ${reportes}" th:value="${reporte.id}" th:text="${reporte.descripcion}"></option>
+                                </select>
+                            </div>
+
+                            <button title="Buscar" type="button" id="btnTraerReporteConfiguracion" class=" btn-sm boton-gris btn " >    
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class=" row">
+                <div id="contenedorTabla" class=" hide table-responsive " >
+                    <div class="col-md-9">
+                        <table 
+                            id="tablaReporteConfiguracion"
+                            class=" tabla-con-cabecera table table-hover punterotabla table-responsive table-bordered table-condensed" >
+
+                        </table>
+                    </div>
+                    <div class="col-md-3">
+                        <table 
+                            id="tablaReporteCuentas"
+                            class="table table-hover   table-responsive table-bordered table-condensed" >
+
+                        </table>
+                    </div>
+                </div>
+                <div  id="mensajeReporteConfiguracion">
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

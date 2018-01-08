@@ -1,0 +1,7 @@
+pe\cajapaita\backerp\contabilidad\servicio\test\AsientoServicioTest.class
+pe\cajapaita\backerp\contabilidad\servicio\test\CuentaServicioTest.class
+pe\cajapaita\backerp\contabilidad\dao\test\RepositoriosTest.class
+pe\cajapaita\backerp\contabilidad\servicio\test\IntegracionSiafcServicioTest.class
+pe\cajapaita\backerp\contabilidad\servicio\test\ReporteServicioTest.class
+pe\cajapaita\backerp\contabilidad\servicio\test\CierreServicioTest.class
+pe\cajapaita\backerp\contabilidad\servicio\test\IntegracionSysoneServicioTest.class

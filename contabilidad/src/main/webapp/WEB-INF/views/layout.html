@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+        <title layout:title-pattern="$DECORATOR_TITLE - $CONTENT_TITLE">ERP</title>
+        <meta charset="UTF-8"/>
+        <link rel="icon" type="image/png" href="/contabilidad/recursos/images/innova.png" />
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link href="/contabilidad/recursos/css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet" />
+        <link href="/contabilidad/recursos/css/bootstrap/sticky-footer.css" rel="stylesheet" />
+        <link href="/contabilidad/recursos/css/bootstrap/3.3.6/bootstrapValidator.min.css" rel="stylesheet" />
+        <link href="/contabilidad/recursos/css/bootstrap/bootstrap-table.min.css" rel="stylesheet" />
+        <link href="/contabilidad/recursos/css/jquery/jquery-ui.css" rel="stylesheet" />
+        <link href="/contabilidad/recursos/css/bootstrap/bootstrap-datepicker.css" rel="stylesheet" />
+        <link href="/contabilidad/recursos/css/sistema.css" rel="stylesheet"/>    
+        <link href="/contabilidad/recursos/css/login.css" rel="stylesheet"/>   
+        <link href="/contabilidad/recursos/css/file.css" rel="stylesheet"/> 
+    </head>
+    <body>        
+        <div th:replace="header :: header" ></div>
+        <div class="container" id="contenedorPaginas">
+             <div id="contenidoDinamico"></div>
+             <div layout:fragment="contenido" id="contenido">
+                
+            </div>
+            <div id="contenedor-paginas">
+                
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div layout:fragment="contenido-fluid">
+            </div>
+        </div>
+            <div th:replace="procesos/mayorizar :: modalMayorizar"></div>
+            <div th:replace="procesos/renumeracion:: modalRenumeracion"></div>
+            <div th:replace="procesos/cierre::modalCierre"></div>
+            <div id="modalProcesos" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                    <div id="contenidoModal" class="modal-content">
+                        
+                    </div>
+                </div>
+            </div>
+                     
+        <script src="/contabilidad/recursos/js/lib/jquery/2.2.3/jquery.min.js"></script>
+        <script src="/contabilidad/recursos/js/lib/bootstrap/3.3.6/bootstrap.js"></script>
+        <script src="/contabilidad/recursos/js/lib/bootstrap/3.3.6/bootstrapValidator.min.js"></script>
+        <script src="/contabilidad/recursos/js/lib/jquery/jquery-ui.js"></script>
+        <script src="/contabilidad/recursos/js/lib/bootstrap/bootstrap-datepicker.js"></script>
+        <script src="/contabilidad/recursos/js/lib/bootstrap/bootstrap-datepicker.es.min.js"></script>
+        <script src="/contabilidad/recursos/js/generales.js"></script>
+        <script src="/contabilidad/recursos/js/generalesDinamico.js"></script>
+        <script src="/contabilidad/recursos/js/lib/bootstrap-table.js"></script>
+        <script src="/contabilidad/recursos/js/lib/bootstrap-table-es-ES.js"></script>  
+        <script src="/contabilidad/recursos/js/validaciones.js"></script>
+        <script src="/contabilidad/recursos/js/pdf.js"></script>
+        <script src="/contabilidad/recursos/js/jquery.bootpag.js"></script>
+        <script src="/contabilidad/recursos/js/procesos/mayorizar.js"></script>
+        <script src="/contabilidad/recursos/js/procesos/renumeracion.js"></script>
+        <script src="/contabilidad/recursos/js/procesos/cierre.js"></script>
+        <script src="/contabilidad/recursos/js/lib/jsonToExcel.js"></script>
+        <script src="/contabilidad/recursos/js/Mensajes.js"></script>
+        <script src="/contabilidad/recursos/js/reportes/estadoResultados.js"></script>
+        <script src="/contabilidad/recursos/js/reportes/encaje.js"></script>
+        <script src="/contabilidad/recursos/js/reportes/libroDiario.js"></script>
+        <script src="/contabilidad/recursos/js/reportes/libroMayor.js"></script>
+        <script src="/contabilidad/recursos/js/reportes/balanceComprobacion.js"></script>
+        <script src="/contabilidad/recursos/js/reportes/balanceSituacion.js"></script>
+        <script src="/contabilidad/recursos/js/reportes/configuracion.js"></script>
+        <div layout:fragment="myScript">
+        </div>               
+    </body>
+</html>

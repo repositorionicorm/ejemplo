@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html layout:decorator="layout">
+    <head>
+        <title>Buscar Cuenta</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <div layout:fragment="contenido">     
+            <div class="col-md-12 contendor-pantilla">
+                <div class=" contenedor-titulo col-md-12">
+                    <h4 class=" titulo-pagina">Buscar Cuentas</h4>
+                </div>
+                <div class="col-md-12 contenedor-cuerpo">
+                    <div class="panel panel-default ">
+                        <div class="panel-body">
+                            <form id="formBuscarCtaPlan" class="form-inline"  >                               
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <input  id="cuenTaInicioPlan" name="cuenTaInicioPlan" type="text" class="form-control input-sm" autofocus=""  placeholder="Ingrese cuenta"/>
+                                            <span class="input-group-btn">
+                                                <button id="buscarPlanContable" class="btn btn-default input-sm" type="button"><span class="glyphicon glyphicon-search "></span></button>
+                                            </span>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                    <div id="contenedorTabla" class="hide">
+                        <div id="tablaPlan" >
+                            <table    data-toolbar="#toolbar" width="100%" id="tablaCuentasPlan" class=" table table-condensed compact" data-search="true">
+                            </table>
+                        </div>
+                        <div class="col-md-12 text-right ">
+                            <div id="paginacion"> </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12" id="errorConsulta">
+
+                    </div>
+                </div>
+            </div>
+            <div th:replace="cuentas/modales :: modalEditar">
+            </div>
+            <!--MODAL PARA ELIMINAR CUENTA-->
+            <div th:replace="cuentas/modales :: modalEliminar">
+
+            </div>
+        </div>
+
+        <div layout:fragment="myScript">
+            <script src="/contabilidad/recursos/js/validaciones.js"></script>
+            <script src="/contabilidad/recursos/js/cuentas/crud.js"></script>
+            <script src="/contabilidad/recursos/js/cuentas/buscar.js"></script>
+        </div>
+
+    </body>
+</html>

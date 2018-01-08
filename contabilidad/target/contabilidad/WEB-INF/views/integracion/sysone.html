@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html layout:decorator="layout">
+    <head>
+        <title>IntegracionSysone</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    </head>
+    <body>
+        <div layout:fragment="contenido">
+            <div id="principal">
+                <div class="col-md-12 contenedor-pantilla">
+                    <div class=" contenedor-titulo col-md-12">
+                        <div id="contenedorMensajes"></div>
+                        <h4 class=" titulo-pagina">
+                            Integración Sysone                  
+                        </h4>
+                    </div>
+                    <div class="col-md-12 contenedor-cuerpo">
+                        <div class="panel panel-default padding-panel">
+                            <div class="panel-body ">
+                                <div class="">
+                                    <div class="form-inline">
+                                        <div class="form-group margen-derecho-20">
+                                            <label>Tipo de Asiento:  </label>
+                                            <select id="cboTipoAsiento" class="form-control input-sm">
+                                                <option value="0">TODOS</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group margen-derecho-20">
+                                            <label>Agencia:  </label>
+                                            <select id="cmbAgencia" class="form-control input-sm">
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                                <button title="Buscar" type="button" id="btnFiltrarIntegraciones" class="  input-sm  boton-gris btn " > 
+                                                    <span class="glyphicon glyphicon-search"></span>
+                                                </button>
+                                        </div>
+                                    </div> 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div id="contenedorTabla" class="table-responsive" >
+                                <table  class="table table-condensed"  id="tablaListaIntegracion">   
+                                </table>
+                                <div id="paginacion"> </div>
+                            </div>
+                            <div class="mensajeSysone text-left">
+                            </div>
+                        </div>
+                    </div>
+                    <div th:replace="integracion/modales :: modalDetalleSysone">                       
+                    </div>
+                    <div th:replace="integracion/modales :: modalActivarInactivar">                       
+                    </div>
+                    <div th:replace="integracion/modales :: modalMostarNumeroAsiento">                       
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div layout:fragment="myScript">            
+            <script src="/contabilidad/recursos/js/integracion/sysone.js"></script>            
+        </div>
+    </body>
+</html>

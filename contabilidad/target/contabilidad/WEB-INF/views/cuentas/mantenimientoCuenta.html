@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html layout:decorator="layout">
+    <head>
+        <title>Plan Contable</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <div layout:fragment="contenido">
+            <div class="col-md-12">
+                <div class="row" id="contenedor-tabs">
+                    <div  class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bhoechie-tab-container">
+                        <div class=" contenedor-titulo">
+                            <h4 class=" titulo-pagina">Plan Contable</h4>
+                        </div>
+                        <!--PANEL IZQUIERDO-->
+                        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4 bhoechie-tab-menu">
+                            <div id="panelIzquierdo" class="list-group text-left">
+                            </div>
+                        </div>
+                        <!--PANEL DERECHO-->
+                        <div style="position: relative" class="col-lg-9 col-md-9 col-sm-8 col-xs-8 bhoechie-tab tab-border" id="panelDerecho">
+                            <div  class="bhoechie-tab-content active">
+                                <ol id="cuentasSeleccionadas" style="background-color: #fff;" class="breadcrumb  breadcrumb-arrow">
+                                </ol>
+                                <div class="panel panel-default">                                  
+                                    <div class="panel-body">
+                                        <div class="row">                                            
+                                            <div class="col-md-9">
+                                                <span id="cuentaActualHtml"></span>
+                                            </div>
+                                            <div  class=" text-right col-md-3">
+                                                <button th:if="${editar}=='N'" title="Agregar Cuenta" data-toggle="modal" data-target="#modalNuevaCuenta" type="button" class=" btn btn-primary btn-sm" id="btnAgregar">
+                                                    <span class="glyphicon glyphicon-plus"></span>
+                                                </button>
+                                            </div>
+                                        </div>                                          
+                                    </div>                                      
+                                </div>
+                                <div id="contenedorTabla">
+                                    <table    data-toolbar="#toolbar" width="100%" id="tablaCuentasMantenimiento" class=" table table-condensed compact" >
+                                    </table>
+                                    <div id="paginacionCuentas" >
+                                        <div id="paginacion"> </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12" id="errorConsulta">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--******************************MODALES******************************************-->
+            <!--MODAL PARA CREAR CUENTA-->
+            <div th:replace="cuentas/modales :: modalAgregar">                        
+            </div>
+            <!--MODAL PARA ELIMINAR UNA CUENTA-->
+            <div th:replace="cuentas/modales :: modalEliminar">                        
+            </div>
+            <!--MODAL PARA ACTUALIZAR UNA CUENTA-->
+            <div th:replace="cuentas/modales :: modalEditar">                       
+            </div>
+        </div>
+        <div layout:fragment="myScript">
+            <script src="/contabilidad/recursos/js/lib/bootstrap-table.js"></script>
+            <script src="/contabilidad/recursos/js/cuentas/crud.js"></script>
+            <script src="/contabilidad/recursos/js/cuentas/mantenimientoCuenta.js"></script>
+        </div>
+    </body>
+</html>

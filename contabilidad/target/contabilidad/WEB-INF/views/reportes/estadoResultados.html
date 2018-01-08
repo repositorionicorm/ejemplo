@@ -1,0 +1,63 @@
+<div id="principal">
+    <div class="col-md-12 contenedor-pantilla">
+        <div class=" contenedor-titulo col-md-12">
+            <h4 class=" titulo-pagina">
+                <div>Reporte Varios</div>
+            </h4>
+        </div>
+        <div class="col-md-12 contenedor-cuerpo">
+            <div class="panel panel-default padding-panel">
+                <div class="panel-body ">
+
+
+                    <div class="form-inline">
+                        <div class="form-group">
+                            <label>Reporte:  </label>
+                            <select id="cmbReporteTipo" class="form-control input-sm">
+                                <option th:if="${reportes !=null}"  th:each="reporte : ${reportes}" th:value="${reporte.id}" th:text="${reporte.descripcion}"></option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Periodo: </label>
+                            <select id="cmbPeriodo" class="form-control input-sm">
+                                <option th:if="${periodos!=null}" th:each="periodo : ${periodos}" th:value="${periodo.id}" th:text="${periodo.descripcion}"></option>
+                            </select>
+                        </div>
+                        <div class="form-group  ">
+                            <button title="Buscar" type="button" id="btnReporteEstados" class=" btn-sm boton-gris btn  " >    
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </div>
+                        
+                    </div>
+
+                </div>
+            </div>
+            <div class=" row">
+                <div id="contenedorTabla" class=" hide table-responsive col-sm-10 col-lg-offset-1" >
+                    <table 
+                         data-toggle="table" 
+                        data-height="500" 
+                        data-width="500" 
+                        id="estadosTabla"
+                        class="table table-hover  table-responsive table-bordered table-condensed">
+                        <thead>
+                            <tr>
+                                <th data-halign="center" id="tituloReporte" data-field="descripcion" data-formatter="formatoDescripcion">Descripcion</th>
+                                <th data-field="monto" data-align="right" data-halign="center" data-formatter="formatoMoneda">Monto</th>
+                            </tr>
+                        </thead>
+                    
+                    </table>
+                    <div class="text-right">  
+                            <a id="generarArchivoExcel"  style="margin-top: 10px" class="btn btn-primary">Excel</a>
+                    </div>
+                </div>
+                <div  id="mensajeReporteEstado" class="hide">
+                   
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

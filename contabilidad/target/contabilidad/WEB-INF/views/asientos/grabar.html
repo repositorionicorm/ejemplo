@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html layout:decorator="layout">
+    <head>
+        <title  th:text="${titulo}"></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />      
+    </head>
+    <body>
+        <div layout:fragment="contenido">
+            <form id="formGrabarAsiento">
+                <div class="col-md-12 contenedor-pantilla">
+                    <div class=" contenedor-titulo col-md-12">
+                        <h4 class=" titulo-pagina">
+                            <span  th:text="${titulo}" id="tituloGrabar"></span> 
+                            <span  style="float: right">N° <span id="spanNumAsientoEditar"> - -</span></span>
+                        </h4>
+                    </div>
+                    <div class="hidden" id="idAsiento"  th:attr="data-id=${idAsiento}"></div>
+                    <div class="col-md-12 contenedor-cuerpo">
+                        <div class="col-lg-12" >
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-body" id="panelValidaciones">
+
+                                <div class=" col-md-12 row">                  
+                                    <div class="form-group col-md-4" id="contenedorFecha">
+                                        <div class="col-md-3">
+                                            <label> Fecha: </label>
+                                        </div>
+                                        <div class=" input-group  input-append date " id="datePicker-asiento">
+                                            <input id="txtFecAsiento" type="text" class=" form-control input-sm" name="txtFecAsiento" />
+                                            <span  class="addon-fecha input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-8" >
+                                        <div class="col-md-1">
+                                            <label>Tipo:</label>
+                                        </div>
+                                        <div class="col-md-11">
+                                            <select id="cmbTipoGrabar"  class="form-control input-sm" >                    
+                                                <option id="0"  value="0">SELECCIONE</option>
+                                            </select>
+                                        </div>
+
+                                    </div>                    
+                                </div>
+
+                                <div class="col-md-12 row">
+
+                                    <div class="form-group" >
+                                        <div class="col-md-1">
+                                            <label class="">Glosa:</label>
+                                        </div>
+
+                                        <div class="col-md-11">
+                                            <input name="txtGlosa" id="txtGlosa" class=" text-uppercase form-control input-sm"/>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-right">
+                            <span th:if="${idAsiento==null}" class="btn btn-sm btn-primary btn-file">
+                                <span class="glyphicon glyphicon-open"></span> <input title="Seleccionar Excel" type="file"  id="fileArchivoExcel" name="fileArchivoExcel"/>
+                            </span>
+                            <button type="button" class="btn btn-sm btn-primary" id="btnAgregarDetalle" title="Agregar Detalle"> <span class="glyphicon glyphicon-plus"></span> </button>     
+                        </div>
+                        <div id="contenedorTabla" class="table-responsive col-xs-12" >
+                            <table  id="tblDetalleAsiento" class="table table-hover  table-responsive table-bordered table-condensed padding-corto-table">
+                            </table>
+                        </div>
+                        <div id="mensajeCargarExcel" class="col-md-12">
+
+                        </div>
+                        <div  id="mensajeAsiento"></div>
+                        <div style="margin-top: 10px" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-right   padding-buttom" >
+                            <p id="mensajeProcesando"  class="text-primary hide text-left col-md-4">
+                                <span class="glyphicon glyphicon-hourglass"></span> &nbsp;Procesando asiento ...
+                            </p>
+                            <button type="button" class="btn btn-primary btn-sm " id="btnGrabarAsiento">Grabar</button>
+                            <button class="btn btn-default btn-sm" id="btnCancelarAsiento">Cancelar</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div th:replace="/asientos/modales :: modalBuscarCuenta">         
+            </div>
+        </div>
+        <div layout:fragment="myScript">
+            <script src="/contabilidad/recursos/js/validaciones.js"></script>
+            <script src="/contabilidad/recursos/js/asientos/asientos.js"></script>
+            <script src="/contabilidad/recursos/js/asientos/grabar.js"></script>         
+        </div>
+    </body>
+</html>

@@ -1,0 +1,6 @@
+syntax: glob
+*.jar
+*.class
+*.war
+target/
+*.orig

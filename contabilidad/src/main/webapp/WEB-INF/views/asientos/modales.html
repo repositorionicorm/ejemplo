@@ -1,0 +1,159 @@
+<!--*************************************   GRABAR.html     ***********************************************-->
+<div th:fragment="modalBuscarCuenta">
+    <div id="modalBuscarCuenta" class="modal fade" tabindex="-1"  >
+        <div class="modal-dialog modal-lg ">
+            <div class="modal-content">
+                <div class="modal-header modal-color-title">
+                    <button class="close" data-dismiss="modal">&times;</button>
+                    <h4>Seleccionar Cuenta</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                    <form  id="formBuscarCtaPlan" class="form-inline">
+                                        <div class="form-group col-md-5">
+                                            <label>Cuenta:</label>
+                                            <div class="input-group">
+                                                <input onkeypress="verificaTecla()" id="txtNumCtaElegida" name='cuenTaInicioPlan'  type="text" class="form-control input-sm" placeholder="Ingrese número de cuenta"/>
+                                                <span class="input-group-btn">
+                                                    <button id="btnBuscarCuenta" class="btn-sm btn btn-default btn-primary" type="button"><span class="glyphicon glyphicon-search "></span></button>
+                                                </span>
+                                            </div>
+                                            
+                                            
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label>Moneda:</label>
+                                            <div class="input-group">
+                                                <group>
+                                                    <input th:if="${monedas!=null}"  type="radio" class="check" name="moneda" th:each="moneda :${monedas}" th:value="${moneda.id}" th:text="${moneda.descripcion}"/>
+                                                </group>
+                                               
+                                            </div>
+                                            
+                                        </div>
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <form id="formAgregarDetalle" >
+                        <div id="" class="divDetalleAsiento hidden">
+                            <div style="height: 500px"  class=" text-right ">
+                                <table class="table table-condensed table-hover table-responsive" id="tblBuscarCta">
+                                </table>
+                                <div id="paginacionCuenta"> </div>
+                            </div>
+                            <hr/>
+                        </div>
+                        <div class="row">
+                            <div id="alertSeleccioneCta"></div>
+                        </div>
+                        <div class=" divDetalleAsiento hidden text-right">
+                            <button id="btnAgregarDetalleAsiento" type="button" class="btn btn-primary btn-sm  ">Agregar</button>
+                            <button data-dismiss="modal" id="btnSeleccionarCta" class="btn btn-sm  btn-default" type="button">Cancelar</button>
+                        </div>  
+                    </form>
+                    <div id="mensajeCta"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--*************************************   LISTAR.html     ***********************************************-->
+<div th:fragment="modalDetalleAsiento">
+    <div id="modalDetalleAsiento" class="modal  fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg ">
+            <div class="modal-content">
+                <div class=" modal-header modal-header-default ">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title text-primary">
+                        <strong>Detalle Asiento</strong>
+                        <span class=" cabecera-numero-asiento " id="lblNumero">N°003</span>
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div  id="contenedorTablaDetalleAsiento" class=" text-right" style="height: 650px;" >                          
+                                <div class="text-left" id="cargandoDatosTransacciones">
+
+                                </div>
+                                <div id="tablaDetalleAsientos" class=" hide text-right"  >
+                                    <div class="text-left" >
+                                        <p> <strong>Glosa:</strong> <span id="glosaDetalle"></span></p>
+                                    </div>
+                                    <table  id="tblMostrarDetalle" class="punterotabla  table table-hover  table-responsive table-bordered table-condensed ">
+                                    </table>
+                                </div>
+                                <div id="listaCuentas" class="text-center">
+                                    <table  class="table table-bordered">
+                                        <tbody>
+                                            <tr>
+                                                <td title="Mostrar cuentas" id="atrasCuentas" class="mostrar-mano" style="width: 20px">
+                                                    <span class="badge badge-success"><span  class="glyphicon glyphicon-share-alt atras"></span></span>
+                                                </td>
+                                                <td id="cuentaActual">Cuenta</td>
+                                                <td id="debeActual">Debe</td>
+                                                <td id="haberActual">Haber</td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div style="margin-top: -20px" id="listaTransacciones" class="text-center">
+                                    <table class="table table-bordered">
+                                        <tbody>
+                                            <tr>
+                                                <td title="Mostrar Transacciones" id="atrasTransacciones" class="mostrar-mano" style="width: 20px">
+                                                    <span class="badge badge-success pull-left"><span class=" glyphicon glyphicon-share-alt atras"></span></span>
+                                                </td>
+                                                <td>
+                                                    Mostrar Transacciones <span id="cuentaAnterior"></span>
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="text-left" id="mensajeError"></div>
+
+                                <div id="cabeceraTransacciones" class="col-md-12 well well-sm text-left ">
+                                    <span class='col-md-4 '><strong class='text-primary etiqueta '> Transacción: </strong><span id="transNum"></span></span>
+                                    <span class='col-md-5 '><strong class='text-primary etiqueta'> Cliente: </strong ><span class='primeraMayuscula' id="transCliente"></span></span>
+                                    <span class='col-md-3 '><strong class='text-primary etiqueta'> Moneda: </strong><span id="transMoneda"></span></span>
+                                    
+                                    
+                                    <span class='col-md-4 '><strong class='text-primary etiqueta'> Cod. Ref: </strong ><span id="codigoRef"></span></span>
+                                    <span class='col-md-8 '><strong class='text-primary etiqueta'> Operación:</strong><span id="transOpe"></span></span>
+                                    
+                                </div>
+
+
+                                <div id="contenedorTblCuenta" class="hide" style="margin-top: 60px">
+                                    <table id="tblCuenta" class="punterotabla ">
+
+                                    </table>
+                                </div>
+                                <div id="contenedorTblTransaccion" class="text-left hide">
+                                    <table  id="tblDetalleTransaccion" class="  table table-hover  table-responsive table-bordered table-condensed ">
+                                    </table>
+                                </div>
+
+                            </div>
+                            <div id="mensajeDetalle"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="btnEliminarAsiento"  type="button" class="btn btn-danger" >Eliminar</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

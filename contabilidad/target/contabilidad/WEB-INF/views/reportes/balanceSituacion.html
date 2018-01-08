@@ -1,0 +1,46 @@
+<div id="principal">
+    <div class="col-md-12 contenedor-pantilla">
+        <div class=" contenedor-titulo col-md-12">
+            <div class="hidden" id="dias" ></div>
+            <div id="contenedorMensajes"></div>
+            <h4 class=" titulo-pagina">
+                Balance de Situación
+            </h4>
+        </div>
+        <div class="col-md-12 contenedor-cuerpo">
+            <div class="panel panel-default padding-panel">
+                <div class="panel-body ">
+                    <div class="row">
+                        <div class="form-inline">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Periodo:  </label>
+                                    <select id="cmbPeriodo" class="form-control input-sm">
+                                        <option th:if="${periodos!=null}" th:each="periodo :${periodos}" th:value="${periodo.id}" th:text="${periodo.descripcion}" th:selected="${periodo.estadoId==1}? 'selected'"></option>
+                                    </select>
+                                </div>  
+                                <div class="form-group">
+                                    <label>Moneda  </label>
+                                    <select id="cmbMoneda" class="form-control input-sm">
+                                        <option th:if="${monedas!=null}" th:each="moneda :${monedas}" th:value="${moneda.id}" th:text="${moneda.descripcion}"></option>
+                                    </select>
+                                </div> 
+                                <button title="Buscar" type="button" id="btnBuscarBalance" class=" btn-sm boton-gris btn  " >    
+                                    <span class="glyphicon glyphicon-search"></span>
+                                </button>
+                            </div>
+                            <div class="col-md-6 text-right">
+                                <a target="_blank"  id="btnExportarExcel" class="btn hide btn-success"> Excel <span class="glyphicon glyphicon-download-alt"></span> </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div id="rptBalanceSituacion"  >
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

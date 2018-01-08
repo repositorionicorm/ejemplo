@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+    <head>
+        <title>Acceso Denegado</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link href="/contabilidad/recursos/css/bootstrap/3.3.6/bootstrap.css" rel="stylesheet" />
+        <link href="/contabilidad/recursos/css/login.css" rel="stylesheet" />
+        <link href="/contabilidad/recursos/css/bootstrap/sticky-footer.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="container-fluid page-header-default"  >
+
+            <div class="jumbotron">
+                <h2>
+                    <span class="glyphicon glyphicon-eye-close"></span> 
+                    Ud. No tiene acceso a esta página.
+                </h2>
+                <h3>
+                    <a href="/contabilidad">
+                        <span class="glyphicon glyphicon-lock"></span> Iniciar sesión
+                    </a>
+                </h3>
+            </div>
+        </div>
+        <div class="text-center">
+            <footer class="footer">
+                <div>
+                    <img src="/contabilidad/recursos/images/logo.png" />
+                </div>
+                <div>
+                    <span style="font-size:8pt;height:10px;">Copyright © ERP 2016</span>
+                </div>
+            </footer>
+        </div>
+
+    </body>
+</html>

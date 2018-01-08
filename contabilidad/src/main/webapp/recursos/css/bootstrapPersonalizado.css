@@ -1,0 +1,30 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 05/08/2016, 09:27:16 AM
+    Author     : dev-out-02
+*/
+
+.col-md-2-1-per,.col-md-2-2-per, .col-md-3-per{
+    position: relative;
+    padding-right: 7px;
+    padding-left: 7px;
+    min-height: 1px;
+}
+.col-md-2-1-per{
+    width: 10%;
+}
+.col-md-2-2-per{
+    width: 13%;
+}
+.col-md-3-per{
+    width: 11%;
+}
+@media (min-width: 992px) {
+    .col-md-2-1-per,.col-md-2-2-per,.col-md-3-per{
+        float: left;
+    }
+}

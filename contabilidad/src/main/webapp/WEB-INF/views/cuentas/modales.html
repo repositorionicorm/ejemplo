@@ -1,0 +1,88 @@
+<!--MODAL PARA EDITAR UNA CUENTA-->
+<div th:fragment="modalEditar">
+    <div id="modalEditarCuenta" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">
+                        Editar la  Cuenta N° <span class="spanCodigoCuenta"></span>
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <form id="formEditarCuenta">
+                        <div class="form-group">
+                            <label >Nuevo N° de cuenta:</label>
+                            <input type="text" class="form-control" name="numCuentaEditar" id="numCuentaEditar"    placeholder="Ingrese N°Cuenta" />
+                        </div>
+                        <div class="form-group">
+                            <label for="descripcion">Descripción:</label>
+                            <input type="text" class="form-control text-uppercase" id="descripcionEditar" name="descripcionEditar"  placeholder="Ingrese una descripción"/>
+                        </div>
+                        <div class="text-center">
+                            <button id="btnEditarCuenta" type="button" class="btn btn-primary" >Aceptar</button>
+                            <button type="button" class="btn btn-default" id="btnCancelarEditar" data-dismiss="modal">Cancelar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--MODAL PARA ELIMINAR CUENTA-->
+<div th:fragment="modalEliminar">
+    <div id="modalEliminarCuenta" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div  class="modal-body">
+                    <div class="alert alert-danger" role="alert">
+                        Realmente desea eliminar la cuenta N° <span class="spanCodigoCuenta"></span> 
+                    </div>
+                    <div class="text-center">
+                        <button type="button" id="btnEliminarCuenta" class="btn btn-danger" data-dismiss="modal">Eliminar</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>  
+</div>
+<!--MODAL PARA AGREGAR CUENTA-->
+<div th:fragment="modalAgregar">
+    <div id="modalNuevaCuenta" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Crear Nueva Cuenta</h4>
+                </div>
+                <div class="modal-body">
+                    <form id="formCrearCuenta">
+                        <div class="form-group" >
+                            <label for="numCuenta">N°Cuenta: </label>
+                            <div class="input-group">
+                                <span class="input-group-addon spanCodigoCuenta"></span>
+                                <div class="with-numero-cuenta"><input id="numCuentaCrear" name="numCuentaNueva" type="text" class="form-control col-md-1"   maxlength="2"  /></div>
+                            </div>
+                        </div>
+                        <div class="form-group" >
+                            <label for="descripcion">Descripción</label>
+                            <input name="descripcionNueva"   placeholder="Ingrese una descripción" type="text" class="form-control text-uppercase" id="descripcionCrear" />
+                        </div>
+                        <div class="form-group">
+                            <label for="tipo">Tipo</label>
+                            <select disabled="" id="tipoCuenta" class="form-control" >
+                                <option value="Deudora">Deudora</option>
+                            </select>
+                        </div>
+                        <div class="text-center">
+                            <button id="btnCrearCuenta" type="button" class="btn btn-primary">Aceptar</button>
+                            <button type="button" class="btn btn-default" id="btnCancelarNueva"  data-dismiss="modal">Cancelar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

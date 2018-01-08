@@ -1,0 +1,28 @@
+<!--**************tipoCambio.html**********************-->
+<div th:fragment="modalHistoricoTC">
+    <div id="modalHistoricoTC" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-color-title modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">
+                        Histórico de Tipo Cambio
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <table id="tblMostrarDetalleHistorico" class="table table-hover  table-responsive table-bordered table-condensed ">
+                        <thead>
+                            <tr>
+                                <th data-align="center" data-field="periodoDescripcion">Periodo</th>
+                                <th data-align="right" data-halign="center" data-field="tipoCambio">Tipo Cambio</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

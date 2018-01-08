@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: pe.cajapaita.backerp.contabilidad.servicio.test.AsientoServicioTest
+-------------------------------------------------------------------------------
+Tests run: 50, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.922 sec

@@ -1,0 +1,80 @@
+<div id="principal">
+    <div class="col-md-12 contenedor-pantilla">
+        <div class=" contenedor-titulo col-md-12">
+            <h4 class=" titulo-pagina">
+                <div>Reporte Encaje</div>
+            </h4>
+        </div>
+        <div class="col-md-12 contenedor-cuerpo">
+            <div class="panel panel-default padding-panel">
+                <div class="panel-body ">
+
+                    <form id="formReporteEncaje">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="form-group">
+                                <label>Reporte:  </label>
+                                <select id="cmbReporteTipo" class=" form-control input-sm">
+                                    <option th:if="${reportes !=null}"  th:each="reporte : ${reportes}" th:value="${reporte.id}" th:text="${reporte.descripcion}"></option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-2" disabled="disabled">
+                            <label> Desde: </label>
+                            <div  class="  input-group  input-append date " id="datePicker-fecInicio">
+                                <input disabled="disabled" th:value="${fechaInicio}" id="txtFecInicioEncaje" type="text" class="padding-left-3px form-control input-sm " name="txtFecInicioEncaje" />
+                                <span   class="addon-fecha input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label> Hasta: </label>
+                            <div  class="input-group  input-append date " id="datePicker-fecFin">
+                                <input id="txtFecFinEncaje" type="text" class="padding-left-3px form-control input-sm" name="txtFecFinEncaje" />
+                                <span  class="addon-fecha input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            
+                            <div class="form-group ">
+                                <label>Moneda: </label>
+                                <select id="cmbMoneda" class="padding-left-3px form-control input-sm">
+                                    <option th:if="${monedas!=null}" th:each="moneda : ${monedas}" th:value="${moneda.id}" th:text="${moneda.descripcion}"></option>
+                                </select>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group  col-md-1">
+                            <label></label>
+<!--                            <button title="Buscar" type="button" id="btnTraerReporteEncaje" class=" btn-sm boton-gris btn form-control " >    
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>-->
+                            <button title="Buscar" type="button" id="btnTraerReporteEncaje" class=" btn-sm boton-gris btn form-control " >    
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </div>
+
+                    </div>
+                    </form>
+                </div>
+            </div>
+            <div class=" row">
+                <div id="contenedorTabla" class=" hide table-responsive col-sm-10 col-lg-offset-1" >
+                    <table id="estadosTabla" class="table table-hover  table-responsive table-bordered table-condensed">
+                        
+
+                    </table>
+                    <div class="text-right">  
+                        <a id="generarArchivoExcel"  style="margin-top: 10px" class="btn btn-primary">Excel</a>
+                    </div>
+                </div>
+                <div  id="mensajeReporteEncaje">
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

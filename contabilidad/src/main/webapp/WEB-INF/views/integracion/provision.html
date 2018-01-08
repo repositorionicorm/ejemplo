@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html layout:decorator="layout">
+    <head>
+        <title>IntegracionProvision</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    </head>
+    <body>
+        <div layout:fragment="contenido">
+            <div id="principal">
+                <div class="col-md-12 contenedor-pantilla">
+                    <div class=" contenedor-titulo col-md-12">
+                        <div id="contenedorMensajes"></div>
+                        <h4 class=" titulo-pagina">
+                            Integración de Provisión                  
+                        </h4>
+                    </div>
+                    <div class="col-md-12 contenedor-cuerpo">                        
+                        <div class="text-right">
+                            <div id="contenedorTabla" class="table-responsive" >
+                                <table  class="table table-condensed"  id="tablaListaIntegracion">   
+                                </table>
+                                <div id="paginacion"> </div>
+                            </div>
+                            <div class="mensajeSysone text-left">
+                            </div>
+                        </div>
+                    </div>
+                    <div th:replace="integracion/modales :: modalDetalleProvision">                       
+                    </div>
+                    <div th:replace="integracion/modales :: modalActivarInactivar">                       
+                    </div>
+                    <div th:replace="integracion/modales :: modalMostarNumeroAsiento">                       
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div layout:fragment="myScript">            
+            <script src="/contabilidad/recursos/js/integracion/provision.js"></script>            
+        </div>
+    </body>
+</html>

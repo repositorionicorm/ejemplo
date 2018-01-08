@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html layout:decorator="layout">
+    <head>
+        <title>Integración SIAFC</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <div layout:fragment="contenido">
+            <div id="principal">
+                <div class="col-md-12 contenedor-pantilla">
+                    <div class=" contenedor-titulo col-md-12">
+                        <div class="hidden" id="dias" ></div>
+                        <div id="contenedorMensajes"></div>
+                        <h4 class=" titulo-pagina">
+                            Integración Siafc
+                        </h4>
+                    </div>
+                    <div class="col-md-12 contenedor-cuerpo">
+                        <div class="panel panel-default padding-panel">
+                            <div style="padding: 0 15px" class="panel-heading"><strong>Archivos Disponibles</strong> <strong id="mostrarTodos" style="float: right">Todos <input id="marcarTodos" type="checkbox" /></strong></div>
+                            <div class="panel-body ">
+                                <div id="mensajeArchivos"></div>
+                                <div id="cargandoArchivos" class="  text-primary ">
+                                    <span class="glyphicon glyphicon-hourglass"> </span>&nbsp;Cargando Archivos ...
+                                </div>
+                                <ul id="archivos">
+                                </ul>
+                            </div>
+                        </div>
+                        <div id="contenedorTablaArchivos">
+                            <table id="tablaIntegracionSiafc" class="punterotabla table">
+                            </table>
+
+                        </div>
+                        <div id="integrando" class="text-center hide" style="height: 360px">
+                            <p class="text-primary"><span class="text-primary glyphicon glyphicon-hourglass"></span> &nbsp;En proceso de integracion...</p>
+                        </div>
+                        <div class="alert alert-danger hide" role="alert" id="errorIntegracion">
+                            
+                        </div>
+                        <div class="botones text-right">
+                            <div class="btn-group" role="group" aria-label="...">
+                                <button id="btnNuevo" type="button" class="btn btn-default">Nuevo</button>
+                                <button id="btnIntegrar" disabled="disabled" type="button" class="btn btn-default">Integrar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div th:replace="integracion/modales :: modalDetalleArchivo"></div>
+        </div>
+        <div layout:fragment="myScript">
+            <script src="/contabilidad/recursos/js/integracion/siafc.js"></script>
+            
+        </div>
+    </body>
+</html>

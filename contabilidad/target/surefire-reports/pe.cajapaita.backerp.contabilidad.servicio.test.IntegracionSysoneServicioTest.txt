@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: pe.cajapaita.backerp.contabilidad.servicio.test.IntegracionSysoneServicioTest
+-------------------------------------------------------------------------------
+Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.029 sec

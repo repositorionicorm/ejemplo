@@ -1,0 +1,47 @@
+#login{
+    margin: 0 auto;
+    width: 350px;
+
+}
+
+#loginContenedor{
+    width: 100%;
+    height: 350px;
+
+    position: absolute;
+    top: 35%;
+
+    margin-top: -195px; 
+
+}
+#btnLogin{
+    margin-top: 10px;
+    margin-bottom: 10px;
+/*    background-color: #8db143;*/
+    border: #8db143;
+}
+.input-login{
+    font-weight:lighter;
+    font-size: 12px;
+}
+.navbar-login
+{
+    width: 305px;
+    padding: 10px;
+    padding-bottom: 0px;
+}
+
+.navbar-login-session
+{
+    padding: 10px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+
+.icon-size
+{
+    font-size: 87px;
+}
+.grupo_login{
+    margin-bottom: 5px;
+}

@@ -1,0 +1,160 @@
+<!--*****************************MODAL DETALLE SIAFC*********************************************-->
+<div th:fragment="modalDetalleArchivo">
+    <div id="modalDetalleArchivo" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-color-title modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">
+                        Detalle de 
+                        <span id="lblArchivo">N°003</span>
+                        <span id="lblAgencia"></span>
+                    </h4>
+                </div>
+                <div id="contenedorTablaDetalleSiafc" class="modal-body" style="height: 640px">
+                    <div id="tablaExcel" class=" text-right"  >
+                        <table id="tblMostrarDetalle" class="table table-hover  table-responsive table-bordered table-condensed ">
+                        </table>
+                        <div id="paginacionDetalle"> </div>
+                    </div>
+                    <div class="mensaje"></div>
+                    
+                </div>
+                <div class="modal-footer">
+                    <button id="btnExportarExcel"  type="button" class="btn btn-primary" >Excel</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--*****************************MODAL DETALLE SYSONE*********************************************-->
+<div th:fragment="modalDetalleSysone">
+    <div id="modalDetalleSysone" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-color-title modal-header">
+                    <button id="btnCerrarModalDetalleSysone" type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">                        
+                        <span id="lblAsiento"></span>
+                        <span id="lblAgencia"></span>
+                    </h4>
+                </div>
+                <div id="contenedorTablaDetalleSysone" class="modal-body" style="height: 640px">
+                    <div id="tablaExcel" class=" text-right"  >
+                        <table id="tblMostrarDetalleSysone" class="table table-hover  table-responsive table-bordered table-condensed ">
+                        </table>
+                        <div id="paginacionDetalle"> </div>
+                    </div>
+                    <h5 id="detalleSysoneProcesando"  class="text-primary hide">
+                        <span class="glyphicon glyphicon-hourglass"></span> &nbsp;Extrayendo asiento ...
+                    </h5>
+                    
+                    <div class="mensaje"></div>
+                </div>
+                <div class="modal-footer">
+                    <p id="sysoneIntegrando"  class="text-primary hide text-left col-md-4">
+
+                        <span class="glyphicon glyphicon-hourglass"></span> &nbsp;Integrando asiento ...
+
+                    </p>
+                    <button id="btnIntegrarAsiento"  type="button" class="btn btn-primary" >Integrar</button>
+                    <button id="btnExportarExcel"  type="button" class="btn btn-default" >Excel</button>
+                    <button id="btnCerrar" type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--*****************************MODAL DETALLE PROVISION*********************************************-->
+<div th:fragment="modalDetalleProvision">
+    <div id="modalDetalleProvision" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-color-title modal-header">
+                    <button id="btnCerrarModalDetalleProvision" type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">                        
+                        <span id="lblAsiento"></span>                    
+                    </h4>
+                </div>
+                <div id="contenedorTablaDetalleProvision" class="modal-body" style="height: 640px">
+                    <div id="tablaExcel" class=" text-right"  >
+                        <table id="tblMostrarDetalleProvision" class="table table-hover  table-responsive table-bordered table-condensed ">
+                        </table>
+                        <div id="paginacionDetalle"> </div>
+                    </div>
+                    <h5 id="detalleProvisionProcesando"  class="text-primary hide">
+                        <span class="glyphicon glyphicon-hourglass"></span> &nbsp;Extrayendo asiento ...
+                    </h5>
+                    
+                    <div class="mensaje"></div>
+                </div>
+                <div class="modal-footer">
+                    <p id="provisionIntegrando"  class="text-primary hide text-left col-md-4">
+
+                        <span class="glyphicon glyphicon-hourglass"></span> &nbsp;Integrando asiento ...
+
+                    </p>
+                    <button id="btnIntegrarAsiento"  type="button" class="btn btn-primary" >Integrar</button>
+                    <button id="btnExportarExcel"  type="button" class="btn btn-default" >Excel</button>
+                    <button id="btnCerrar" type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div th:fragment="modalActivarInactivar">
+    <div id="modalActivarInactivar" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog ">
+            
+            <div class="modal-content">
+                <div class="modal-color-title modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title"> 
+                        
+                        <span id="lblAsiento"></span>
+                    </h4>
+                </div>
+                <div id="contenedorTablaDetalleSysone" class="modal-body" >
+                    <h4 id="lblMensaje" class="text-primary"></h4>
+                    <div id="mensajeActivarInactivar"></div>
+                </div>
+                <div class="modal-footer" >
+                    <button id="btnAceptar"  type="button" class="text-center btn btn-primary" >Si</button>
+                    <button id="btnCerrarActivacion" type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<div th:fragment="modalMostarNumeroAsiento">
+    <div id="modalMostarNumeroAsiento" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-sm">
+            
+            <div class="modal-content">
+                <div class="modal-color-title modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title"> 
+                        <span id="">Asientos integrados:</span>
+                    </h4>
+                </div>
+                <div id="" class="modal-body" >
+                    
+                    <h5 class="" id="listaNumeros">
+
+                    </h5>
+                    <div id="errorMostrarNumero"></div>
+                </div>
+                <div class="modal-footer" >
+                    <button id="" type="button" class="btn btn-primary" data-dismiss="modal">Aceptar</button>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>

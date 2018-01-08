@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="es">
+    <head>
+        <title>ERP</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>        
+        <link rel="icon" type="image/png" href="/contabilidad/recursos/images/innova.png" />
+        <link href="/contabilidad/recursos/css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet" />
+        <link href="/contabilidad/recursos/css/login.css" rel="stylesheet" />
+        <link href="/contabilidad/recursos/css/bootstrap/sticky-footer.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="text-center"  id="loginContenedor">
+            <div id="login">
+
+                <div class="panel panel-default" style="border: 0">
+                    <div class="panel-heading" style="background: #ffffff;border: 0"><img src="/contabilidad/recursos/images/logo_erp.jpg"/></div>
+                    <div class="panel-body">
+
+                        <form method="POST" th:action="@{/login}">
+
+                            
+
+                            <div class="input-group grupo_login">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i> </span>
+                                <input  name="username" autofocus="" class="form-control input-lg input-login" type="text" placeholder="Ingrese Usuario"/>
+                            </div>
+                            <div class="input-group  grupo_login" >
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                <input name="password"  class="form-control input-login input-lg" type="password" placeholder="Ingrese Contraseña"/>
+                            </div>
+                           
+                                <button type="submit" id="btnLogin" class="btn btn-primary form-control input-lg">Iniciar Sesión</button>
+                            
+                            
+                            <div th:if="${mensaje!=null}" class="alert alert-danger alert-dismissible" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                <span th:text="${mensaje}"></span>
+                            </div>
+                        </form> 
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="text-center">
+            <footer class="footer">
+                <div>
+                    <img src="/contabilidad/recursos/images/logo.png" />
+                </div>
+                <div style="font-size:8pt;height:10px;">
+                    <span >Copyright © CMAC Paita S.A. 2016</span>
+                    <p><span>Todos los derechos reservados</span></p>
+                </div>
+            </footer>
+        </div>
+        <script src="/contabilidad/recursos/js/lib/jquery/2.2.3/jquery.min.js"></script>
+        <script src="/contabilidad/recursos/js/lib/bootstrap/3.3.6/bootstrap.js"></script>
+    </body>
+</html>
